@@ -1,0 +1,10 @@
+<h3>Podcasts</h3>
+
+<table>
+<th>Name</th>
+<% @podcasts.each do |podcast| %>
+<tr>
+	<td><%= podcast.name %></td>
+</tr>
+<% end %>
+</table>
