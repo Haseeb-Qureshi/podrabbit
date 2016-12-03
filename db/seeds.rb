@@ -1,6 +1,6 @@
-phil = User.create!(first_name: 'Phil', last_name: 'Donahue', email: 'phil@donahue.com', password_digest: 'asdgoijsogi')
+phil = User.create!(first_name: 'Phil', last_name: 'Donahue', email: 'phil@donahue.com', password: 'abcdef')
 
-producer_dude = User.create!(first_name: 'Producer', last_name: 'Dude', email: 'producer_dude1995@yahoo.com', password_digest: 'sdgoiwh2g')
+producer_dude = User.create!(first_name: 'Producer', last_name: 'Dude', email: 'producer_dude1995@yahoo.com', password: 'hahaha')
 
 podcast = Podcast.create!(name: "Phil's Show", client: phil)
 
