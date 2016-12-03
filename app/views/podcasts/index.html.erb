@@ -1,5 +1,8 @@
 <h3>Podcasts</h3>
 
+<!-- <input type="button" value="Create New" onclick="/podcasts/new" /> -->
+<%= link_to "Create New", new_podcast_path %>
+
 <table>
 <th>Name</th>
 <% @podcasts.each do |podcast| %>
