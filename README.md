@@ -1,3 +1,8 @@
 # PodRabbit
 
-This is an app in progress! Check back in this space later.
+Contributors:
+* Jeanna Gindi
+* Jenna Vuong
+* Emma Koszinowski
+* Ian Robinson
+* Haseeb Qureshi
