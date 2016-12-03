@@ -1,7 +1,7 @@
 class PodcastsController < ApplicationController
 
   def index
-  	@podcasts = Podcast.all
+  	@podcasts = Podcast.includes(:episodes).all
   end
   def new 
 

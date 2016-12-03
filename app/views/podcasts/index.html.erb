@@ -4,10 +4,15 @@
 <%= link_to "Create New", new_podcast_path %>
 
 <table>
-<th>Name</th>
-<% @podcasts.each do |podcast| %>
-<tr>
-	<td><%= podcast.name %></td>
-</tr>
-<% end %>
+	<th>Name</th>
+	<% @podcasts.each do |podcast| %>
+		<tr>
+			<td><%= podcast.name %></td>
+			<table>
+				<% podcast.episodes.each do |episode| %>
+					<tr><%= render episode %></tr>
+				<% end %>
+			</table>
+		</tr>
+	<% end %>
 </table>
