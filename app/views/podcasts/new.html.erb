@@ -1,0 +1,11 @@
+<h3>Create new podcast</h3>
+
+<form accept-charset="UTF-8" action="/podcasts" method="post">
+   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<label>
+		Podcast Name
+		<input type="text" name="name"><br />
+
+	</label>
+	<input type="submit"></input>
+</form>
