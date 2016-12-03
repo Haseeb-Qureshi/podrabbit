@@ -11,6 +11,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'thin'
+gem 'sprockets-rails', :require=> 'sprockets/railtie'
+gem 'bootstrap', '~> 4.0.0.alpha5'
 
 group :development, :test do
   gem 'pry-rails'
