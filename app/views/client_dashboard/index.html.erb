@@ -1,6 +1,22 @@
 <div class="container">
   <div class="jumbotron">
-    <h1>Hello world</h1>
-    <p> this </p>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Podcast</th>
+          <th>Episode</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @episode.each do |episode| %>
+        <tr>
+          <td><%= episode.podcast.name %></td>
+          <td><%= episode.name %></td>
+          <td><%= episode.status %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
