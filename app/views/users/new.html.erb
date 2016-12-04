@@ -1,0 +1,16 @@
+<form action="/users" method="POST">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <label> First name
+    <input name="user[first_name]" type="text"><%= @user.first_name %></input>
+  </label>
+  <label> Last name
+    <input name="user[last_name]" type="text"><%= @user.last_name %></input>
+  </label>
+  <label> Email address
+    <input name="user[email]" type="text"><%= @user.email %></input>
+  </label>
+  <label> Password
+    <input name="user[password]" type="text" />
+  </label>
+  <button type="submit">Register</button>
+</form>
