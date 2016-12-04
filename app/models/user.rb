@@ -17,14 +17,18 @@ class User < ActiveRecord::Base
   has_many :podcasts, inverse_of: :client
   has_one :producer, class_name: User.name, foreign_key: :producer_id
 
-  validate :password, allow_nil: true, length: { minimum: 6 }
+  validates :password, length: { minimum: 6, allow_nil: true }
 
-  before_create :ensure_valid_session_token!
+  after_create :generate_session_token!
 
   attr_accessor :password
 
+  def self.find_by_credentials(email, password)
+    user = find_by(email: email)
+    user if user.try(:is_password?, password)
+  end
+
   def password=(password)
-    super
     self.password_digest = BCrypt::Password.create(password)
   end
 
@@ -32,13 +36,14 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(password_digest).is_password?(password)
   end
 
-  def ensure_valid_session_token!
-    self.session_token = new_session_token
-    ensure_valid_session_token! if User.exists?(session_token: session_token)
+  def generate_session_token!
+    self.session_token = self.class.new_session_token
+    generate_session_token! if User.exists?(session_token: session_token)
     save!
+    session_token
   end
 
-  def new_session_token
+  def self.new_session_token
     SecureRandom.urlsafe_base64
   end
 end

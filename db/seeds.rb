@@ -1,4 +1,4 @@
-phil = User.create!(first_name: 'Phil', last_name: 'Donahue', email: 'phil@donahue.com', password: 'abcdef')
+phil = User.create!(first_name: 'Phil', last_name: 'Donahue', email: 'phil@donahue.com', password: 'hahaha')
 
 producer_dude = User.create!(first_name: 'Producer', last_name: 'Dude', email: 'producer_dude1995@yahoo.com', password: 'hahaha')
 
